@@ -1,8 +1,23 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.card {
+  margin-top: 5%;
+  border-radius: 10px;
 }
 
-a {
-  color: #00B7FF;
+.card img {
+  max-height: 275px;
+  width: auto;
+  margin-top: 10px;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.card-body .card-text {
+  color: #707377;
+}
+
+.price {
+  font: bold;
+  font-size: 1.5rem;
 }
