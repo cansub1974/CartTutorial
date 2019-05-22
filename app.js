@@ -8,6 +8,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const expressHbs = require('express-handlebars');
 const mongoose = require('mongoose');
+const session = require('express-session');
 
 
 
@@ -36,6 +37,11 @@ app.use(express.urlencoded({
   extended: false
 }));
 app.use(cookieParser());
+app.use(session({
+  secret: 'mysupersecret',
+  resave: false,
+  saveUninitialized: false
+}));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
