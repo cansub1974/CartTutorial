@@ -9,6 +9,8 @@ const bodyParser = require('body-parser');
 const expressHbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const passport = require('passport');
+const flash = require('connect-flash');
 
 
 
@@ -42,6 +44,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
+app.use(flash());
+app.use(passport.initialize());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
