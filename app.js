@@ -7,11 +7,19 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const expressHbs = require('express-handlebars');
+const mongoose = require('mongoose');
+
 
 
 var indexRouter = require('./routes/index');
 
 var app = express();
+
+// mongoose
+mongoose.connect('mongodb://localhost:27017/shopping', {
+  useNewUrlParser: true
+});
+
 
 // view engine setup
 app.engine('.hbs', expressHbs({
